@@ -38,11 +38,11 @@
         </div>
         <div class="field">
           <%= f.label :phone %>
-          <%= f.text_area :phone, class: "form-control" %>
+          <%= f.text_area :phone, class: "form-control user_phone"%>
         </div>
-        <div class="field">
+        <div class="field mt-3">
           <%= f.label :Status %>
-          <%= f.select(:status,option_for_select([['Active', 'active'],['Inactive', 'inactive']]), class: "form-control user_phone") %>
+          <%= f.select :status, options_for_select([['active', 'active'],['inactive', 'inactive']]), {class: "form-control user_status"} %>
         </div>
       </div>
       <div class="modal-footer">
