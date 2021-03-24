@@ -14,7 +14,7 @@
         <div class="card-text">
         Name: <p><%= user.email %></p>
         Phone No: <p><%= user.phone %></p>
-        Status: <p><%= user.status%></p>
+        Status: <p class=<%="#{user.status == 'active' ? 'green' : 'red'}"%>><%= user.status%></p>
         </div>
       </div>
     </div>
@@ -24,8 +24,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Create New User</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
           </div>
           <div class="modal-body">
             <div class="field">
@@ -50,7 +49,6 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <%= submit_tag "Update", class: 'btn btn-primary' %>
           </div>
         </div>

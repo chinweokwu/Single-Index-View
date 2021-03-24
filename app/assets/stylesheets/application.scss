@@ -11,17 +11,14 @@
  * It is generally better to create a new file per style scope.
  */
  @import "bootstrap";
-
-  .fas {
-  float: left;
-  font-size: 170%;
-  margin-top: 5px;
-  margin-right: 5px;
+ 
+ .red {
+ color: red;
 }
 
-.status { color: green; }
-
-.status_red { color: red;}
+.green {
+  color: green;
+}
 
 .pagination {
   background: #f1f1f1;
