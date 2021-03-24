@@ -1,24 +1,35 @@
-# README
+# Single Index View
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an Engineer Assessment Project - Level 3:
 
-Things you may want to cover:
+![screenshot](./Screenshot1.png)
+![screenshot](./Screenshot2.png)
 
-* Ruby version
+### Installation
+You need to have this tools to start using it:
+* Ruby - 2.7.0
+* Rails - 5.2.4.3
+* Clone the repo git clone git clone git@github.com:chinweokwu/Webspoons_Project.git
+* Open your terminal and cd to the project`s folder
+* Install gems with using 'bundle install'
+* Run migrations with bin/rake db:migrate
+* Run 'rails server' and go to your browser 'http://localhost:3000'
+* For testing run 'rails console'
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Author
 
-* Database initialization
+👤 **Morah Paul**
 
-* How to run the test suite
+- GitHub:[@github/chinweokwu](https://github.com/chinweokwu)
+- Linkedin:[linkedin/morah](https://www.linkedin.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🤝 Contributing
 
-* Deployment instructions
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page]().
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
