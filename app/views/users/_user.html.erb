@@ -1,0 +1,58 @@
+<div id="user_<%= user.id %>">
+  <div class="card border-secondary mb-3">
+    <div class="card-header d-flex justify-content-between">
+      <%= user.title %> <%= user.name.truncate(15) %>
+       <div class="d-flex justify-content-end">
+          <button type="button" class= 'btn btn-outline-success my-2 my-sm-0 mr-4' data-toggle= "modal" data-target = "#myupdateexampleModal_<%= user.id%>">Edit</button>
+            <%= link_to user, method: :delete, data: { confirm: 'Are you sure?', remote: true}, class: 'delete text-dark' do %>
+            <span aria-hidden="true">&times;</span>
+          <% end %>
+       </div>
+      </div>
+    
+      <div class="card-body text-secondary">
+        <div class="card-text">
+        Email: <p><%= user.email %></p>
+        Phone No: <p><%= user.phone %></p>
+        Status: <p class=<%="#{user.status == 'active' ? 'green' : 'red'}"%>><%= user.status%></p>
+        </div>
+      </div>
+    </div>
+  <!-- Modal -->
+  <%= form_for(user, :method => :put, remote: true) do |f| %>
+    <div class="modal fade" id="myupdateexampleModal_<%= user.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+          </div>
+          <div class="modal-body">
+            <div class="field">
+              <%= f.label :name %>
+              <%= f.text_area :name, class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :email %>
+              <%= f.text_area :email, class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :title %>
+              <%= f.text_area :title, class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :phone %>
+              <%= f.text_area :phone, class: "form-control" %>
+            </div>
+            <div class="field mt-3">
+              <%= f.label :Status %>
+              <%= f.select :status, options_for_select([['active', 'active'],['inactive', 'inactive']]), {class: "form-control"} %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= submit_tag "Update", class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

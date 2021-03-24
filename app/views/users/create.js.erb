@@ -1,0 +1,8 @@
+$("#exampleModal").modal('hide');
+$(".user_name").val('');
+$(".user_email").val('');
+$(".user_title").val('');
+$(".user_phone").val('');
+$(".user_status").val('');
+$("#continer-users").prepend('<%= j render @user %>');
+$("#user_<%= @user.id %>").hide().fadeIn(1000);

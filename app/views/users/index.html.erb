@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<!-- Button trigger modal -->
+
+<%= form_tag users_path, method: :get do %>
+  <div class="input-group mb-4 w-50 ">
+    <%= text_field_tag :search, params[:search], class: 'form-control rounded' %>
+    <%= button_tag "Search", name: nil, class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>
+
+<div class="card-columns" id="continer-users" >
+  <%= render  @users %>
+</div>
+<%= will_paginate @users %>
+
+
+<!-- Modal -->
+<%= form_for(@user, remote: true) do |f| %>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create New User</h5>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <%= f.label :Name %>
+          <%= f.text_area :name, class: "form-control user_name", required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :Email %>
+          <%= f.text_area :email, class: "form-control user_email", required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :Title %>
+          <%= f.text_area :title, class: "form-control user_title", required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :phone %>
+          <%= f.text_area :phone, class: "form-control user_phone", required: true %>
+        </div>
+        <div class="field mt-3">
+          <%= f.label :Status %>
+          <%= f.select :status, options_for_select([['active', 'active'],['inactive', 'inactive']]), {class: "form-control user_status"} %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag "Create", class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
