@@ -25,19 +25,19 @@
       <div class="modal-body">
         <div class="field">
           <%= f.label :Name %>
-          <%= f.text_area :name, class: "form-control user_name" %>
+          <%= f.text_area :name, class: "form-control user_name", required: true %>
         </div>
         <div class="field">
           <%= f.label :Email %>
-          <%= f.text_area :email, class: "form-control user_email" %>
+          <%= f.text_area :email, class: "form-control user_email", required: true %>
         </div>
         <div class="field">
           <%= f.label :Title %>
-          <%= f.text_area :title, class: "form-control user_title" %>
+          <%= f.text_area :title, class: "form-control user_title", required: true %>
         </div>
         <div class="field">
           <%= f.label :phone %>
-          <%= f.text_area :phone, class: "form-control user_phone"%>
+          <%= f.text_area :phone, class: "form-control user_phone", required: true %>
         </div>
         <div class="field mt-3">
           <%= f.label :Status %>
